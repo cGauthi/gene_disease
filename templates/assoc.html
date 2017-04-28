@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="/css/final.css">
+		<title> Find Your Disease Here </title>
+	</head>
+	<body>
+		<h1>Gene-Disease Association Tool</h1>
+		<form action="/cgi-bin/gene_search.cgi" method="POST">
+			<label for='gene_name'>Which gene are you curious about?</label>
+			<input id='gene_name' type='text' name='gene_name' autofocus id='gene_name'>
+			<input type='submit' name='submit' value='Associate!'>
+		</form>
+		
+		<h2>Disease Association Results</h2>
+		<p> Gene of Interest: {{gene}} </p>
+		<p> Matches Found: {{count}} </p>
+		<table>
+				<tr>
+					<th>Score</th>
+					<th>Disease Name</th>
+					<th>Description</th>
+				</tr>
+			{% for i in range(count) %}
+				<tr>
+					<td> {{score[i]}} </td>
+					<td> {{diseaseName[i]}} </td>
+					<td> {{desc[i]}} </td>		
+				</tr>
+			{% endfor %}
+		</table>
+
+	</body>
+</html>
