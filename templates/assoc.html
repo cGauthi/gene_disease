@@ -1,39 +1,48 @@
 <!DOCTYPE html>
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="/css/final.css">
+		<link rel="stylesheet" href="/css/assoc.css">
 		<title> Find Your Disease Here </title>
 	</head>
+
 	<body>
-		<h1>Gene-Disease Association Tool</h1>
-		<form action="/cgi-bin/gene_search.cgi" method="POST">
-			<label for='gene_name'>Which gene are you curious about?</label>
-			<input id='gene_name' type='text' name='gene_name' size="20" placeholder="Input gene symbol (i.e. BRCA1)" autofocus id='gene_name'>
-			<input type='submit' name='submit' value='Associate!'>
-		</form>
+		<div class="container">
+		<header id="gene_info">
+			<h1>Query Gene Data</h1>
+			<p> Gene of Interest: {{gene}} </p>
+			<p> Description: {{gene_desc}} </p>
+		</header>
+
+		<header id="search_results">
+			<h2>Disease Association Results</h2>
+
+			{% if (count > 1) %}
+				<p> {{count}} phenotype correlations detected!  Listing in order of signficance. </p>
+			{% elif (count == 1) %}
+				<p> {{count}} phenotype correlation detected!</p>
+			{% else %}
+				<p> No disease correlations detected for this gene.  Please try a different search.</p>
+			{% endif %}
 		
-		<h2>Query Gene Data</h2>
-		<p> Gene of Interest: {{gene}} </p>
-		<p> Description: {{gene_desc}} </p>
-		<p> Matched Diseases: {{count}} </p>
-
-		<h2>Disease Association Results</h2>
-		<table>
-				<tr>
-					<th>Index</th>
-					<th>Score</th>
-					<th>Disease Name</th>
-					<th>UMLS Disease ID</th>
-				</tr>
-			{% for i in range(count) %}
-				<tr>
-					<td> {{i+1}}
-					<td> {{score[i]}} </td>
-					<td> {{diseaseName[i]}} </td>
-					<td> {{diseaseID[i]}} </td>		
-				</tr>
-			{% endfor %}
-		</table>
-
+			<a href="../final.php">New Search</a>
+	
+				<table>
+					<tr id="col_heads">
+						<th>Index</th>
+						<th>Score</th>
+						<th>Disease Name</th>
+						<th>Disease ID</th>
+					</tr>
+				{% for i in range(count) %}
+					<tr id="col_data">
+						<td> {{i+1}}
+						<td> {{score[i]}} </td>
+						<td> {{diseaseName[i]}} </td>
+						<td> {{diseaseID[i]}} </td>		
+					</tr>
+				{% endfor %}
+				</table>
+		</header>
+		</div>
 	</body>
 </html>

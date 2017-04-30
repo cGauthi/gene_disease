@@ -1,0 +1,17 @@
+.container{
+	margin: 0px auto;
+	width: 1000px;
+}
+
+body {
+	font-family: "Georgia", serif;
+}
+
+input[required]:invalid {
+	border-color: #A5340B;
+}
+
+input[required]:valid {
+	border-color: #0B9900;
+}
+

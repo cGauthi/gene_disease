@@ -1,0 +1,32 @@
+.container {
+	margin: 0px auto;
+	width: 1000px;
+}
+
+body { 
+	font-family: "Georgia", serif;
+}
+
+table {
+	border-collapse: collapse;
+	width: 1000px;
+}
+
+th, td {
+	border: 2px solid rgb(80,80,80);
+	padding: 3px;
+}
+
+th {
+	background-color: #000;
+	color: #fff;
+}
+
+table td:nth-child(n) {
+	text-align: center;
+}
+
+table td:nth-child(3) {
+	text-align: left;
+}
+
