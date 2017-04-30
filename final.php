@@ -11,15 +11,25 @@ $result = mysqli_query($connection, $sql) or die ("Error " . mysqli_error($conne
 <html>
 	<head>
 		<meta charset='utf-8'>
-		<link rel="stylesheet" href="/css/final/css">
+		<link rel="stylesheet" href="/css/gene_search.css">
 		<title>Find Your Disease Here</title>
 	</head>
 	
+	<div class="container">
 	<body>
-		<h1>Gene-Disease Association Tool</h1>
+		<img id="byline" src="./img/testbanner2.jpg">
+		<div id="content">
+		<h2>Gene-Disease Association Tool</h2>	
+			<p>Through the curbing influences of evolution, the human genome has created endless permutations of itself - sampling small changes which can lead to drastic (or not so drastic) results.  The ~3.2 billion nucleotides that are packed within each cell in our bodies are constantly in flux.  They experiment with, edit, and correct themselves silently within.  Occasionally, these alterations will lead to the manifestation of genetic disease.
+			</p>
+			<p> With advances in molecular biology and bioinformatics technology, we are now able to accurately track down which changes lead to a given disease phenotype.  Every gene has the potential to subtly shift and create an outcome out of tune with a healthy organism.  This knowledge is constantly being updated and utilized to generate new therapies which may help cure these diseases.  So I ask you...
+			</p>   
 		<form action="/cgi-bin/gene_search.cgi" method="POST">
 			<label for='gene_name'>Which gene are you curious about?</label>
-			<input id ='gene_name' name='gene_name' type='text' list='geneSymbol' autocomplete='off' placeholder='Input gene symbol (i.e. BRCA1)' autofocus id='gene_name'>
+			<input id ='gene_name' name='gene_name' type='text' required="required" 
+				placeholder="Input gene symbol (i.e. BRCA1)"
+				autofocus='true' autocomplete='off'
+				list='geneSymbol'>
 			<datalist id='geneSymbol'>
 				<?php while($row = mysqli_fetch_array($result)) { ?>
 					<option value="<?php echo $row['geneName']; ?>"> <?php echo $row['geneName']; ?></option>
@@ -28,7 +38,9 @@ $result = mysqli_query($connection, $sql) or die ("Error " . mysqli_error($conne
 			<input type='submit' name='submit' value='Associate!'>
 		</form>
 		<?php mysqli_close($connection); ?>
+		</div>
 	</body>
+	</div>
 </html>
 
 

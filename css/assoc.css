@@ -3,6 +3,11 @@
 	width: 1000px;
 }
 
+#byline {
+	width: 1000px;
+	height: 200px;
+}
+
 body { 
 	font-family: "Georgia", serif;
 }
@@ -18,7 +23,7 @@ th, td {
 }
 
 th {
-	background-color: #000;
+	background-color: #8d9ca4;
 	color: #fff;
 }
 
@@ -28,5 +33,9 @@ table td:nth-child(n) {
 
 table td:nth-child(3) {
 	text-align: left;
+}
+
+table tr:nth-child(2n) {
+	background-color: #d8e4ea
 }
 

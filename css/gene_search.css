@@ -3,6 +3,13 @@
 	width: 1000px;
 }
 
+#byline{
+	width: 1000px;
+	height: 200px;
+}
+
+
+
 body {
 	font-family: "Georgia", serif;
 }
