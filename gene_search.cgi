@@ -7,7 +7,7 @@ import cgi
 templateLoader = jinja2.FileSystemLoader(searchpath="/var/www/html/templates")
 
 env = jinja2.Environment(loader=templateLoader)
-template = env.get_template('tassoc.html')
+template = env.get_template('assoc.html')
 
 formData = cgi.FieldStorage()
 match_term = formData.getfirst('gene_name', '').upper()
