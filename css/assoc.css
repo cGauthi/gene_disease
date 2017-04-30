@@ -12,6 +12,11 @@ body {
 	font-family: "Georgia", serif;
 }
 
+a {
+	float: right;
+	font-size: 22px;
+}
+
 table {
 	border-collapse: collapse;
 	width: 1000px;

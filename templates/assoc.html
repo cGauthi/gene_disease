@@ -7,7 +7,8 @@
 
 	<body>
 		<div class="container">
-		<img id="byline" src="../img/testbanner2.jpg">
+		<img id="byline" role="banner" src="../img/testbanner2.jpg">
+
 		<header id="gene_info">
 			<h2>Query Gene Data</h2>
 			<p> Gene of Interest: {{gene}} </p>
@@ -17,6 +18,8 @@
 		<header id="search_results">
 			<h2>Disease Association Results</h2>
 
+			<a href="../final.php">New Search</a>
+
 			{% if (count > 1) %}
 				<p> {{count}} phenotype correlations detected!  Listing in order of signficance. </p>
 			{% elif (count == 1) %}
@@ -25,8 +28,6 @@
 				<p> No disease correlations detected for this gene.  Please try a different search.</p>
 			{% endif %}
 		
-			<a href="../final.php">New Search</a>
-	
 				<table>
 					<tr id="col_heads">
 						<th>Index</th>
