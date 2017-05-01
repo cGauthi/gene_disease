@@ -1,6 +1,6 @@
 <?php
 // Connect to database
-$connection = mysqli_connect("localhost", "cgauthi", "Biologia1!2@", "gene_disease") or die("Error " . mysqli_error($connection));
+$connection = mysqli_connect("localhost", "*******", "*******", "gene_disease") or die("Error " . mysqli_error($connection));
 
 // Query Data for DB tables
 $sql = "SELECT distinct geneName FROM gene_disease";

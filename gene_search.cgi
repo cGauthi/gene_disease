@@ -21,7 +21,7 @@ def main(SearchMe):
     disease_ids = []
     scores = []
 
-    conn = mysql.connector.connect(user='cgauthi', password='Biologia1!2@',
+    conn = mysql.connector.connect(user='*******', password='********',
             host='localhost', database='gene_disease')
     curs = conn.cursor()
 
